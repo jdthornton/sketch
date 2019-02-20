@@ -1,0 +1,78 @@
+.drawing {
+  font-size: 16px;
+}
+.pictureDetails {
+  font-size: 11px;
+  text-align: right;
+  margin-right: 15px;
+}
+
+.toggle {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 22px;
+  cursor: pointer;
+  padding-left: 44px;
+}
+
+.room {
+  font-weight: bold;
+}
+
+.status {
+  font-size: 10px;
+}
+
+.loader {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border-top: 2px solid #bbb;
+  animation: rotate 2s infinite linear;
+}
+
+@media (min-width: 768px){
+  .toggle {
+    font-size: 30px;
+    padding-left: 64px;
+    padding-bottom: 4px;
+  }
+  .pictureDetails {
+    font-size: 14px;
+  }
+  .status {
+    font-size: 11px;
+  }
+  .drawing {
+    font-size: 22px;
+  }
+}
+@media (min-width: 1024px){
+  .toggle {
+    padding-left: 78px;
+    font-size: 34px;
+  }
+}
+@media (min-width: 1336px){
+  .toggle {
+    font-size: 24px;
+    padding-left: 56px;
+  }
+}
+
+@media (max-width: 812px) and (orientation: landscape){
+  .toggle {
+    font-size: 24px;
+    padding-left: 38px;
+  }
+}
+
+
+@keyframes rotate {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(359deg); }
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}

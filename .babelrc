@@ -1,0 +1,17 @@
+{
+    "plugins": [
+        [
+            "@babel/plugin-syntax-dynamic-import"
+        ],
+        [
+            "@loadable/babel-plugin"
+        ],
+        ["@babel/plugin-proposal-export-default-from"],
+        ["@babel/plugin-proposal-class-properties"],
+        ["@babel/plugin-transform-regenerator"]
+    ],
+    "presets": [
+        "@babel/preset-react",
+        "@babel/preset-env"
+    ]
+}

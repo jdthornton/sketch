@@ -1,0 +1,59 @@
+.list {
+  flex-grow: 1;
+  padding: 2.5vw 5vw;
+}
+
+.add {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.add > svg {
+  width: 90vw;
+}
+
+.list > div {
+  vertical-align: top;
+}
+
+@media (min-width: 680px){
+  .list {
+    padding: 4vw 5vw;
+  }
+  .add > svg {
+    width: 28vw;
+  }
+  .add {
+    margin-left: 2vw;
+  }
+}
+
+@media (min-width: 1336px){
+  .list {
+    padding: 2vw 5vw;
+  }
+  .add > svg {
+    width: 20vw;
+  }
+}
+
+@media (min-width: 1440px){
+  .list {
+    padding: 4vw 12vw;
+  }
+  .add > svg {
+    width: 17.5vw;
+  }
+  .add {
+    margin-left: 1.2vw;
+  }
+}
+
+@media (max-width: 900px) and (orientation : landscape){
+  .list {
+    padding: 2vw;
+  }
+  .add > svg {
+    width: 30vw;
+  }
+}

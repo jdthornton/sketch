@@ -1,0 +1,52 @@
+.toolBtn {
+  width: 10.5vw;
+  height: 10.5vw;
+  background-color: white;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px #909090;
+  cursor: pointer;
+  box-sizing: border-box;
+  margin-right: 4px;
+}
+
+.active {
+  border: 1px solid var(--primary-color);
+}
+
+.active svg {
+  fill: var(--primary-color);
+}
+@media (min-width: 768px){
+  .toolBtn {
+    width: 9vw;
+    height: 9vw;
+    margin-right: 15px;
+  }
+}
+@media (min-width: 1025px){
+  .toolBtn {
+    width: 3.8vw;
+    height: 3.8vw;
+    margin-right: 8px;
+  }
+}
+
+@media (min-width: 1367px){
+  .toolBtn {
+    width: 4.5vw;
+    height: 4.5vw;
+  }
+}
+
+@media only screen
+  and (min-device-width: 1024px)
+  and (max-device-width: 1366px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    .toolBtn {
+      width: 8vw;
+      height: 8vw;
+    }
+}

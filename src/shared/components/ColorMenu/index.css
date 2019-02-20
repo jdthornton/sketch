@@ -1,0 +1,56 @@
+.container {
+  width: 42vw;
+}
+
+.item {
+  height: 5.2vw;
+  width: 5.2vw;
+  margin: 0.01px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px){
+  .container {
+    width: 36.5vw;
+  }
+  .item {
+    height: 4vw;
+    width: 4vw;
+    margin: 0.5px 2px;
+  }
+}
+@media (min-width: 1025px){
+  .container {
+    width: 15.6vw;
+  }
+  .item {
+    height: 1.8vw;
+    width: 1.8vw;
+    margin: 0.5px 1px;
+  }
+}
+
+@media (min-width: 1367px){
+  .container {
+    width: 18.5vw;
+  }
+  .item {
+    height: 2.1vw;
+    width: 2.1vw;
+  }
+}
+
+@media only screen
+  and (min-device-width: 1024px)
+  and (max-device-width: 1366px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    .container {
+      width: 24vw;
+    }
+    .item {
+      width: 3vw;
+      height: 3vw;
+    }
+}

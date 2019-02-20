@@ -1,0 +1,29 @@
+.container {
+  margin-top: 5px;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 55px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  z-index: 11000;
+  padding: 6px 18px 6px 8px;
+  box-sizing: border-box;
+}
+
+.message {
+  flex-grow: 1;
+  color: #fff;
+}
+
+.text {
+  font-size: 14px;
+}
+
+.statusIcon {
+  width: 36px;
+  height: 36px;
+  fill: #fff;
+  margin-right: 10px;
+  margin-left: 5px;
+}

@@ -1,0 +1,56 @@
+.host {
+  position: absolute;
+  left: 5px;
+  top: 3px;
+  width: 20px;
+  height: 20px;
+}
+
+.leaveBtn {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  text-align: center;
+}
+
+.leaveBtn div {
+  color: #efefef;
+  font-size: 10px;
+}
+
+.leaveBtn svg {
+  width: 24px;
+  height: 24px;
+  fill: #fff;
+  left: -3px;
+  bottom: 2px;
+  position: relative;
+}
+
+.list {
+  width: 312px;
+  height: 365px;
+  position: relative;
+  margin-top: 25px;
+}
+
+.container {
+  text-align: center;
+  font-size: 32px;
+  color: #fff;
+  position: relative;
+}
+
+@media (min-width: 1025px){
+  .container {
+    font-size: 48px;
+  }
+  .list {
+    width: 650px;
+    height: 400px;
+    margin-top: 30px;
+  }
+  .host {
+    top: 4px;
+  }
+}

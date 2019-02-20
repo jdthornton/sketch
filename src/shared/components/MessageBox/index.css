@@ -1,0 +1,42 @@
+.container {
+  overflow-y: scroll;
+  max-height: 100%;
+  flex-grow: 1;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.messageContainer {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.container::-webkit-scrollbar {
+  width: 10px;
+}
+.container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: linear-gradient(left, #fff, #e4e4e4);
+  border: 1px solid #aaa;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+
+.container::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(left, #22ADD4, #1E98BA);
+}
+
+.userName {
+  color: #555;
+}
+
+.announcement {
+  color: #555;
+  font-size: 12px;
+}
+
+.messageText {
+  color: #9f9f9f;
+}

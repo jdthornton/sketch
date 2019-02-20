@@ -1,0 +1,85 @@
+.canvas {
+  width: 100vw;
+  height: calc(100vw * 9 / 16);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  border-radius: 2px;
+  background-color: #fff;
+}
+
+.drawer {
+  display: flex;
+  flex-direction: column;
+}
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  padding: 12px 10px;
+}
+.screenLock {
+  display: none;
+}
+
+@media only screen
+  and (min-device-width: 300px)
+  and (max-device-width: 812px)
+  and (orientation: landscape) {
+  .screenLock {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 12000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+  }
+}
+
+
+@media (min-width: 768px){
+  .toolbar {
+    padding: 10px;
+  }
+}
+@media (min-width: 1025px){
+  .canvas {
+    width: calc(80.5vh * 16 / 9);
+    height: 80.5vh;
+  }
+  .toolbar {
+    padding: 0 30px;
+  }
+}
+
+@media (min-width: 1440px){
+  .canvas {
+    width: calc(80.5vh * 16 / 9);
+    height: 80.5vh;
+  }
+}
+
+@media only screen
+  and (min-device-width: 1024px)
+  and (max-device-width: 1024px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    .canvas {
+      width: calc(54vh * 16 / 9);
+      height: 54vh;
+    }
+}
+@media only screen
+  and (min-device-width: 1366px)
+  and (max-device-width: 1366px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    .canvas {
+      width: calc(60vh * 16 / 9);
+      height: 60vh;
+    }
+}

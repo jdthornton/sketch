@@ -1,0 +1,63 @@
+.container {
+  width: 100%;
+}
+.container > input {
+  width: 100%;
+  margin: 20px 0;
+  height: 40px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.container > button {
+  float: right;
+}
+
+.button {
+  outline: none;
+  text-align: center;
+  display: inline-block;
+  font-size: 1.2em;
+  border: none;
+  cursor: pointer;
+  padding: 7px 30px;
+  color: #fff;
+  background-color: var(--primary-color);
+}
+
+@media (min-width: 680px){
+  .container {
+    width: 450px;
+  }
+}
+@media (min-width: 425px) and (orientation: portrait){
+  .button {
+    font-size: 1.9em;
+    padding: 12px 45px;
+  }
+}
+@media (max-width: 900px) and (orientation: landscape){
+  .button {
+    font-size: 0.9em;
+  }
+}
+
+@media (min-width: 768px){
+  .button {
+    padding: 10px 36px;
+    font-size: 1.2em;
+  }
+}
+
+@media (min-width: 1336px){
+  .button {
+    padding: 7px 30px;
+  }
+}
+
+@media (max-width: 812px) and (orientation: landscape){
+  .button {
+    padding: 4px 24px;
+    font-size: 1em;
+  }
+}
