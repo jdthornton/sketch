@@ -8,7 +8,6 @@ const BrotliPlugin = require('brotli-webpack-plugin');
 const LoadablePlugin = require('@loadable/webpack-plugin')
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const CONFIG_VARIABLES = require('./config');
 const OUTPUT_DIR = path.resolve(__dirname, '../dist');
@@ -94,7 +93,7 @@ module.exports = {
 		new SWPrecacheWebpackPlugin({
 			filename: 'serviceWorker.js',
 			minify: true,
-			staticFileGlobsIgnorePatterns: [/loadable-stats\.json$/]
+			staticFileGlobsIgnorePatterns: [/loadable-stats\.json$/, /manifest\.json$/]
 		})
-	],
+	]
 };

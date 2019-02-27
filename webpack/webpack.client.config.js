@@ -1,4 +1,3 @@
-const isDev = process.env.NODE_ENV !== 'production';
 const webpack = require('webpack');
 const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
