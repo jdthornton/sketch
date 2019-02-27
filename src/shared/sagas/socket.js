@@ -47,7 +47,7 @@ export function* socketRequest({ type, payload }){
   })
 
   if(failure){
-    yield put(addToast({status: "error", text: failure.payload}))
+    yield put(addToast("error", failure.payload))
     return {error: failure.payload};
   } else {
     return {success: success.payload}
@@ -66,11 +66,11 @@ const socketChannel = () => eventChannel(emit => {
     emit(action)
   }
   Socket.connection.onopen = () => {
-    emit(addToast({status: "success", text: "Join a room to begin playing."}))
+    emit(addToast("success", "Join a room to begin playing."))
     emit({type: OPEN_SOCKET__SUCCESS})
   }
   Socket.connection.onclose = () => {
-    emit(addToast({status: "error", text: "Connection error"}))
+    emit(addToast("error", "Connection error"))
     emit({type: CLOSE_SOCKET})
   }
 

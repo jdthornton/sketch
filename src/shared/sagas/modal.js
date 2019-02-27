@@ -17,26 +17,29 @@ function* modalWatcher(actionType){
 
 
 /*
- *  Modal forms only - see modalWatcher.
- *  Sagas not needed for static modals use plain redux actions from modal utility instead
+ *  Flow for modal forms
  *
  *  @param {string} modal - Name of the modal to be opened
- *  @param {string} actionType - The request action to be listened for
- *  @param {func} successHandler - A callback function
+ *  @param {string} actionType - The action type associated with the modal - saga begins socket request when this action is received
+ *  @param {func} successHandler - A success callback
+ *  @param {func} errorHandler - An error callback
  */
-export function* modalSaga(modal, actionType, successHandler){
+export function* modalSaga(modal, actionType, successHandler, errorHandler){
   yield put({type: OPEN_MODAL, payload: modal});
+  while(true){
 
-  //End saga if user closes modal
-  let { modalTask, cancel } = yield race({
-    modalTask: call(modalWatcher, actionType),
-    cancel: take(CLOSE_MODAL)
-  })
-
-  //If modal wasn't closed and the modal task was successful
-  if(!cancel && modalTask.response && !modalTask.response.error){
-
-    yield put({type: CLOSE_MODAL}) //close modal
-    yield call(successHandler, modalTask.response.success, modalTask.action.payload) //run successhandler
+    let { modalTask, cancel } = yield race({
+      modalTask: call(modalWatcher, actionType),
+      cancel: take(CLOSE_MODAL)
+    })
+    if(cancel) return;
+    else if(modalTask.response.error){
+      yield call(errorHandler, modalTask.response.error)
+    } else {
+      yield put({type: CLOSE_MODAL})
+      yield call(successHandler, modalTask.response.success, modalTask.action.payload)
+      return;
+    }
   }
+
 }

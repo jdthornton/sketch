@@ -12,11 +12,11 @@
 }
 
 .active {
-  border: 1px solid var(--primary-color);
+  border: 1px solid #3f8da7;
 }
 
 .active svg {
-  fill: var(--primary-color);
+  fill: #3f8da7;
 }
 @media (min-width: 768px){
   .toolBtn {

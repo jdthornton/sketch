@@ -6,19 +6,14 @@ import Socket from '../utils/Socket';
 import {
   TOKEN_REQUEST,
   TOKEN_REQUEST__SUCCESS,
+  TOKEN_REQUEST__FAILURE,
   AUTHORIZATION_REQUEST,
   LOAD_AUTH_DATA
 } from '../reducers/auth';
-import {
-  addToast
-} from '../reducers/toast'
+import { addToast } from '../reducers/toast'
+import { socketRequest } from './socket';
+import { modalSaga } from './modal';
 
-import {
-  socketRequest
-} from './socket';
-import {
-  modalSaga
-} from './modal';
 
 export function getUserFromState({auth}){return auth.user};
 
@@ -64,12 +59,14 @@ function* tokenRequestSaga(){
  *  Begins the auth flow and runs the passed success handler on auth success
  */
 export function* authFlow(successHandler){
-  yield put(addToast({status: "error", text: "You must choose a display name first"}))
+  yield put(addToast("error", "You must choose a display name first"))
   yield call(modalSaga, "auth", TOKEN_REQUEST, function*(token){
     if(token){
       localStorage.token = token;
       yield call(getUserFromToken, token)
       if(successHandler) yield call(successHandler)
     }
+  }, function*(error){
+    yield put({type: TOKEN_REQUEST__FAILURE, payload: error})
   })
 }

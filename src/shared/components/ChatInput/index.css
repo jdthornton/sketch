@@ -32,14 +32,11 @@
 }
 
 .input::placeholder {
-  color: rgba(0,0,0,0);
-}
-.input:hover::placeholder {
   color: #999;
 }
 
 .button {
-  fill: var(--primary-color);
+  fill: #3f8da7;
   cursor: pointer;
   position: absolute;
   right: 16px;

@@ -20,16 +20,18 @@ export default class Canvas extends React.PureComponent {
   }
   componentDidMount(){
     this.setDimensions();
-    this.props.actions
-      .forEach(action => {
-        this.initTool(action.tool);
-        this.tool.draw(action.width
-          ? this.scaleDrawAction(action)
-          : action.data
-        );
-      })
-    this.initTool(this.props.tool)
     window.addEventListener('resize', (e) => {this.resizeThrottler(e)}, false);
+    if(this.props.actions && this.props.actions.length){
+      this.props.actions
+        .forEach(action => {
+          this.initTool(action.tool);
+          this.tool.draw(action.width
+            ? this.scaleDrawAction(action)
+            : action.data
+          );
+        })
+    }
+    this.initTool(this.props.tool)
   }
   componentDidUpdate({actions, tool}){
     if(actions !== this.props.actions){

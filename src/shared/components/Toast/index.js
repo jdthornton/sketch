@@ -5,11 +5,11 @@ import styles from './index.css';
 function Toast(props){
   var timer = setTimeout(closeToast, props.delay);
   function closeToast(){
-    props.close(props.id)
+    props.close(props.toast.id)
     clearTimeout(timer)
   }
   function renderIcon(){
-    if(props.message.status == 'success'){
+    if(props.toast.status == 'success'){
       return(
         <svg className={styles.statusIcon} viewBox="0 0 24 24">
           <path fill="none" d="M0 0h24v24H0z"/>
@@ -25,7 +25,7 @@ function Toast(props){
     )
   }
   function getColor(){
-    switch (props.message.status) {
+    switch (props.toast.status) {
       case 'success':
         return {"backgroundColor": "#70b771"}
         break;
@@ -38,7 +38,7 @@ function Toast(props){
     <span className={styles.container} style={getColor()} onClick={closeToast}>
       {renderIcon()}
       <div className={styles.message}>
-        <div className={styles.text}>{props.message.text}</div>
+        <div className={styles.text}>{props.toast.text}</div>
       </div>
     </span>
   )

@@ -25,7 +25,7 @@ const RoundDetails = ({ drawer, picture, end, id, winner, isHost, waitingForMore
           </div>
           <Timer end={end} />
         </div>
-      : isHost && !waitingForMorePlayers ? <div onClick={startGame}>Start Game</div> : <div className={styles.loader}></div>
+      : isHost && !waitingForMorePlayers ? <div className={styles.startBtn} onClick={startGame}>Start Game</div> : <div className={styles.loader}></div>
     }
     <ModalTrigger modal="room" className={styles.toggle}>
       <div className={styles.room}>{room}</div>

@@ -26,15 +26,6 @@ module.exports = {
         }
       },
       {
-        test: /\.html$/,
-        use: [
-          {
-            loader: "html-loader",
-            options: { minimize: true }
-          }
-        ]
-      },
-      {
         test: /\.css$/,
         use: [
           "style-loader",
@@ -49,29 +40,6 @@ module.exports = {
             }
           }
         ]
-      },
-      {
-        test: /\.(jpg|png)$/,
-        use: {
-          loader: "url-loader",
-          options: {
-            limit: 25000,
-          },
-        },
-      },
-      {
-          test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-          use: {
-              loader: 'file-loader',
-              options: {
-                  name: '[name].[ext]',
-                  outputPath: 'fonts/'
-              }
-          }
-      },
-      {
-        test: /\.svg$/,
-        loader: 'svg-inline-loader'
       }
     ]
   },
@@ -79,10 +47,6 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: path.resolve(__dirname, '../src/client/index.ejs'),
       filename: "./index.html"
-    }),
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css'
     }),
     new webpack.DefinePlugin(CONFIG_VARIABLES)
   ],

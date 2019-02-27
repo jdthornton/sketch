@@ -14,7 +14,7 @@ const ToastContainer = ({toasts, className, animations, delay, animationTime, re
           timeout={animationTime}
           unmountOnExit
         >
-          <Toast id={toast.id} message={toast.message} delay={delay} close={removeToast} />
+          <Toast toast={toast} delay={delay} close={removeToast} />
         </CSSTransition>
       )}
   </TransitionGroup>

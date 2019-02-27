@@ -2,7 +2,7 @@ const ADD_TOAST = 'ADD_TOAST';
 const REMOVE_TOAST = 'REMOVE_TOAST';
 
 let count = 0;
-export const addToast = payload => ({type: ADD_TOAST, payload: {id: count++, message: payload}})
+export const addToast = (status, text) => ({type: ADD_TOAST, payload: {id: count++, status, text}})
 export const removeToast = id => ({type: REMOVE_TOAST, payload: id})
 
 export default function reducer(previousState = [], {type, payload}){

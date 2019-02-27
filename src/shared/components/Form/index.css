@@ -22,7 +22,7 @@
   cursor: pointer;
   padding: 7px 30px;
   color: #fff;
-  background-color: var(--primary-color);
+  background-color: #3f8da7;
 }
 
 @media (min-width: 680px){

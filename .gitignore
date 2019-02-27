@@ -30,8 +30,11 @@ bower_components
 .lock-wscript
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
-build/Release
-dist/
+dist/js
+dist/css
+dist/*.html*
+dist/loadable-stats.json
+dist/serviceWorker.js
 build/
 
 # Dependency directories

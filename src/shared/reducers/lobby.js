@@ -53,7 +53,7 @@ const lobbyReducer = (previousState = initialState, { type, payload }) => {
         case ADD_ROOM_TO_LOBBY:
           return {
             ...previousState,
-            roomNames: [ ...previousState.roomNames, payload.name],
+            roomNames: [ ...previousState.roomNames, payload],
             roomMap: {
               ...previousState.roomMap,
               [payload]: []

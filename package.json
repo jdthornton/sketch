@@ -5,11 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon build/server.js",
-    "clean": "rimraf build",
-    "dev:client": "rimraf dist/scripts && cross-env NODE_ENV=development ./node_modules/.bin/webpack-dev-server --open --config webpack/webpack.client.config.js --port 8080",
+    "dev:client": "rimraf dist/js dist/css && cross-env NODE_ENV=development ./node_modules/.bin/webpack-dev-server --open --config webpack/webpack.client.config.js --port 8080",
     "dev:server": "rimraf build && cross-env NODE_ENV=development webpack --config webpack/webpack.server.config.js -w",
     "prod:server": "rimraf build && cross-env NODE_ENV=production webpack --config webpack/webpack.server.prod.config.js",
-    "prod:client": "rimraf dist/scripts && cross-env NODE_ENV=production webpack --config webpack/webpack.client.prod.config.js",
+    "prod:client": "rimraf dist/js dist/css && cross-env NODE_ENV=production webpack --config webpack/webpack.client.prod.config.js",
     "prod": "npm-run-all -p prod:server prod:client -s start"
   },
   "keywords": [

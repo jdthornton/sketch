@@ -13,7 +13,7 @@ const Toaster = () =>
       exitActive: styles.exitActive
     }}
     animationTime={300}
-    delay={1500}
+    delay={2500}
   />
 
 export default Toaster

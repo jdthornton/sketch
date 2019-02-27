@@ -21,8 +21,8 @@ module.exports = {
 	},
 	mode: 'production',
 	output: {
-		filename: '[name].[hash].js',
-		chunkFilename: "[id].[hash].js",
+		filename: 'js/[name].[hash].js',
+		chunkFilename: "js/[id].[hash].js",
 		path: OUTPUT_DIR,
 		publicPath: '/',
 	},
@@ -61,24 +61,13 @@ module.exports = {
              }
            },
         ]
-      },
-			{
-				test: /\.(jpg|svg|png|gif)$/,
-				use: [
-					{
-						loader: 'file-loader',
-						options: {
-							name: 'images/[name].[ext]',
-						},
-					},
-				],
-			},
+      }
 		],
 	},
 	plugins: [
 		new MiniCssExtractPlugin({
-			filename: '[name].[contenthash].css',
-			chunkFilename: '[name]-[hash:8].css',
+			filename: 'css/[name].[contenthash].css',
+			chunkFilename: 'css/[name]-[hash:8].css',
     }),
 		new OptimizeCssAssetsPlugin({
 			assetNameRegExp: /\.css$/g,
@@ -103,11 +92,9 @@ module.exports = {
 		new BrotliPlugin(),
 		new LoadablePlugin(),
 		new SWPrecacheWebpackPlugin({
-			filename: 'serviceWorker.js'
-		}),
-		new CopyWebpackPlugin([
-        { from: './src/client/manifest.json' },
-				{ from: './src/client/icons' }
-    ])
+			filename: 'serviceWorker.js',
+			minify: true,
+			staticFileGlobsIgnorePatterns: [/loadable-stats\.json$/]
+		})
 	],
 };
